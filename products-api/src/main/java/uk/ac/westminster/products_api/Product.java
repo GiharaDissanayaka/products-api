@@ -5,6 +5,23 @@ public class Product{
     private String name;
     private double price;
 
+    public String getSummary() {
+        return getName() + "— £" + getPrice();
+    }
+
+    public class DigitalProduct extends Product {
+        private String downloadUrl;
+
+        @Override
+        public String getSummary () {
+            return "Digital: " + getName() + | Download: " + downloadUrl;
+        }
+
+        public String getDownloadUrl() {
+            return downloadUrl;
+        }
+    }
+
     public Product(){}
 
     public Product(Long id, String name, double price) {
